@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍐大王的网站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">🍐大王的网站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#messageModal">留言板</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">联系</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="photoCarousel" class="carousel slide photo-carousel" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/pear1.jpg" class="d-block w-100" alt="梨子照片1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/pear2.jpg" class="d-block w-100" alt="梨子照片2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/pear3.jpg" class="d-block w-100" alt="梨子照片3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">上一张</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">下一张</span>
+            </button>
+        </div>
+
+        <div class="pear-description mt-4">
+            <h2 class="text-center">欢迎来到🍐大王的世界</h2>
+            <p class="text-center">
+                这里是梨子爱好者的天堂！我们提供最新鲜、最甜美的梨子，以及关于梨子的各种有趣信息。
+                无论您是梨子专家还是刚刚开始探索梨子的魅力，这里都有适合您的内容。
+            </p>
+            <p class="text-center">
+                浏览我们的照片和视频，了解更多关于梨子的种植、挑选和食用方法。
+            </p>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">生日</h5>
+                        <p class="card-text">点击查看🍐大王的生日信息</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#birthdayModal">了解更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">职业</h5>
+                        <p class="card-text">点击了解🍐大王的职业生涯</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#careerModal">了解更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">梦想</h5>
+                        <p class="card-text">探索🍐大王的梦想世界</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dreamModal">了解更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">时光机</h5>
+                        <p class="card-text">查看和上传珍贵的回忆</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#timelineModal">进入时光机</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">留言板</h5>
+                        <p class="card-text">给🍐大王留言</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#messageModal">留言</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-grid mt-4">
+            <!-- 视频网格内容会由 JavaScript 动态添加 -->
+        </div>
+
+        <div class="container mt-4">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#messageModal">打开留言板</button>
+        </div>
+
+        <!-- 模态框 -->
+        <div class="modal fade" id="birthdayModal" tabindex="-1" aria-labelledby="birthdayModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="birthdayModalLabel">🍐大王的生日</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="birthday-text">
+                            🎉 🍐大王的生日是在金秋时节，每年的 <span class="highlight">9月27日</span>。 🎉
+                        </p>
+                        <p>
+                            这一天，整个果园都会洋溢着欢乐的气氛！成熟的梨子挂满枝头，空气中弥漫着甜美的果香。
+                            大家齐聚一堂，共同庆祝🍐大王的诞辰，品尝各式各样的梨子美食，欢声笑语不断。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="careerModal" tabindex="-1" aria-labelledby="careerModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="careerModalLabel">🍐大王的职业</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="career-text">
+                            🍐大王是一名充满爱心的 <span class="highlight">梨子医生（Doctor）</span> 👨‍⚕️
+                        </p>
+                        <p>
+                            他不仅精通梨树的种植和养护，还致力于研究梨子的营养价值和健康效益。
+                            作为一名"梨子医生"，🍐大王用他的专业知识帮助人们通过食用适量的梨子来改善健康状况。
+                            他经常举办讲座和工作坊，向大家传授梨子的生之道。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="dreamModal" tabindex="-1" aria-labelledby="dreamModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="dreamModalLabel">🍐大王的梦想</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="dream-text">
+                            🍐大王的梦想是 <span class="highlight">吃遍世界美食</span> 🌍🍽️
+                        </p>
+                        <p>
+                            作为一个美食爱好者，🍐大王梦想着能够品尝到世界各地的美味佳肴。从意大利的手工披萨到日本的精致寿司，
+                            从法国的松露到墨西哥的塔可，他渴望用味蕾探索每一种独特的口味。
+                        </p>
+                        <p>
+                            但是，🍐大王并不满足于仅仅品尝美食。他还希望能够：
+                        </p>
+                        <ul>
+                            <li>学习不同文化的烹饪技巧 👨‍🍳</li>
+                            <li>收集各地的特色食谱 📖</li>
+                            <li>结识来自世界各地的美食爱好者 🤝</li>
+                            <li>将自己的梨子美食融入各国菜系 🍐🌟</li>
+                        </ul>
+                        <p>
+                            通过场美食之旅，🍐大王不仅要满足自己的味蕾，还要将自己对梨子的热爱传播到世界各地，
+                            让更多人认识到梨子的美味与营养价值
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="timelineModal" tabindex="-1" aria-labelledby="timelineModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="timelineModalLabel">时光机</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="uploadForm">
+                            <div class="mb-3">
+                                <label for="imageUpload" class="form-label">上传图片</label>
+                                <input type="file" class="form-control" id="imageUpload" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">上传</button>
+                        </form>
+                        <div class="mt-4">
+                            <h3>时光相册</h3>
+                            <div id="imageGallery" class="row"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="messageModalLabel">留言板</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="messageForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">您的名字</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">您的留言</label>
+                                <textarea class="form-control" id="message" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">提交留言</button>
+                        </form>
+                        <div class="mt-4">
+                            <h3>留言列表</h3>
+                            <div id="messageList"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalLabel">联系🍐大王</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="contact-text">
+                            欢迎来到🍐大王的联系页面！我们很高兴能与您取得联系。
+                        </p>
+                        <p>
+                            🍐大王一直致力于为大家带来最新鲜、最美味的梨子体验。无论您是对梨子种植有疑问，
+                            还是想要分享您的梨子故事，或者只是想和我们聊聊天，我们都非常欢迎！
+                        </p>
+                        <p>
+                            您可以通过以下方式联系我们：
+                        </p>
+                        <ul>
+                            <li>📧 邮箱：pearking@example.com</li>
+                            <li>📱 电话：123-456-7890</li>
+                            <li>🏠 地址：梨子大道888号，果园市，水果省</li>
+                            <li>⏰ 工作时间：周一至周五 9:00-18:00</li>
+                        </ul>
+                        <p>
+                            除此之外，您还可以关注我们的社交媒体账号，获取最新的梨子资讯和活动信息。
+                            我们会定期在社交媒体上分享梨子种植技巧、美味食谱以及有趣的梨子小知识。
+                        </p>
+                        <p>
+                            🍐大王期待着与您相聚在梨子的世界里！无论您有什么想法或建议���都请随时与我们联系。
+                            让我们一起探索梨子的无限可能！
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-auto py-3 bg-light">
+            <div class="container text-center">
+                <div class="social-icons">
+                    <a href="#" class="social-icon" id="wechatIcon" data-bs-toggle="tooltip" data-bs-placement="top" title="点击查看微信号" data-wechat-id="FengYX0720">
+                        <i class="fab fa-weixin"></i>
+                    </a>
+                    <a href="https://v.douyin.com/iSRFQn6m/" class="social-icon" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="访问我的抖音">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://b23.tv/lypBEnc" class="social-icon" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="访问我的bilibili">
+                        <i class="fab fa-bilibili"></i>
+                    </a>
+                </div>
+                <p class="mt-2">关注我们的社交媒体，获取更多梨子的精彩内容！</p>
+                <span class="text-muted">© 2023 🍐大王的网站. 保留所有权利。</span>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
